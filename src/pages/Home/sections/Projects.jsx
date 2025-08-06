@@ -137,7 +137,7 @@ export default function Projects() {
                 isOpen={isOpen}
                 closeModal={closeModal}
                 style={
-                    "hidden fixed z-300 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-5/6 rounded-lg bg-gradient-to-b from-gray-900 to-neutral-950"
+                    "hidden fixed z-300 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-5/6 rounded-lg bg-gradient-to-b from-gray-900 to-neutral-950  max-sm:h-1/2"
                 }
             >
                 <img

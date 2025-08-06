@@ -85,8 +85,10 @@ export default function Profile() {
                     />
                 </div>
             </div>
-            <div className="perfil__img w-1/2 min-xl:w-xl h-full max-md:w-5/6 max-md:h-dvh ">
-                <ModelSection />
+            <div className="perfil__img w-1/2 flex flex-col justify-center items-center min-xl:w-xl h-full max-md:w-5/6 max-md:h-dvh">
+                <div className="w-5/6 h-1/2 min-md:w-11/12 min-md:3/4">
+                    <ModelSection />
+                </div>
             </div>
         </section>
     );
