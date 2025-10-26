@@ -10,6 +10,7 @@ import {
     imagenTableroUno,
     imagenTableroDos,
     imagenTableroTres,
+    imagenTableroCuatro,
     imagenScrollerUno,
     imagenScrollerDos,
     imagenScrollerTres,
@@ -28,6 +29,7 @@ export default function Projects() {
     const [isOpen, setIsOpen] = useState(false);
     const { modalImage } = useContext(ModalImageContext);
     const gitTablero = "https://github.com/diegotlou/tablero-tareas";
+    const linkTablero = "https://diegotlou.github.io/gestor-de-tareas/";
     const gitPaises = "https://github.com/diegotlou/react-paises";
     const gitRecomendacion =
         "https://github.com/diegotlou/recomendacion-peliculas";
@@ -44,6 +46,10 @@ export default function Projects() {
 
     const renderGitTablero = () => {
         return <Git href={gitTablero} />;
+    };
+
+    const renderLinkTablero = () => {
+        return <Link href={linkTablero} />;
     };
 
     const renderGitPaises = () => {
@@ -82,10 +88,15 @@ export default function Projects() {
         {
             title: "Tablero de tareas",
             technologies: ["React", "Bootstrap", "CSS", "Django", "MySQL"],
-            links: [renderGitTablero],
-            images: [imagenTableroUno, imagenTableroDos, imagenTableroTres],
+            links: [renderGitTablero, renderLinkTablero],
+            images: [
+                imagenTableroUno,
+                imagenTableroDos,
+                imagenTableroTres,
+                imagenTableroCuatro,
+            ],
             content:
-                "Administra tus tareas, crea, elimina, revisa y edita tu tarea, crea una cuenta, ingresa y cierra sesión.",
+                "Administra tus tareas, crea, elimina, revisa y edita tu tarea, crea una cuenta, ingresa y cierra sesión. Versión prueba disponible.",
         },
         {
             title: "Llamada a API de paises",

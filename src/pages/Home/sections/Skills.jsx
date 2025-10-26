@@ -1,46 +1,34 @@
 import { motion } from "motion/react";
 import { AnimatedList } from "../../../components";
 import {
-    cssSvg,
-    djangoSvg,
-    htmlSvg,
-    javascriptSvg,
-    mysqlSvg,
-    pythonSvg,
-    reactSvg,
-    tailwindcssSvg,
-    vscodeSvg,
-} from "../../../assets";
+    Css,
+    Django,
+    Html,
+    Javascript,
+    Mysql,
+    Python,
+    React,
+    Tailwind,
+    Vscode,
+} from "../../../components/Icons";
 
 export default function Skills({}) {
     const iconosSkills = [
-        [cssSvg, "CSS"],
-        [djangoSvg, "Django"],
-        [htmlSvg, "HTML5"],
-        [javascriptSvg, "Javascript"],
-        [mysqlSvg, "MySQL"],
-        [pythonSvg, "Python"],
-        [reactSvg, "React"],
-        [tailwindcssSvg, "Tailwindcss"],
-        [vscodeSvg, "VSCode"],
+        [<Css />, "CSS"],
+        [<Django />, "Django"],
+        [<Html />, "HTML5"],
+        [<Javascript />, "Javascript"],
+        [<Mysql />, "MySQL"],
+        [<Python />, "Python"],
+        [<React />, "React"],
+        [<Tailwind />, "Tailwindcss"],
+        [<Vscode />, "VSCode"],
     ];
-
-    const navVariants = {
-        visible: {
-            transition: { staggerChildren: 0.07, delayChildren: 0.2 },
-        },
-        hidden: {
-            transition: { staggerChildren: 0.05, staggerDirection: -1 },
-        },
-    };
 
     const renderIconSkills = (icon) => {
         return (
             <>
-                <img
-                    className="size-20 object-contain max-sm:size-10"
-                    src={icon[0]}
-                />
+                <>{icon[0]}</>
                 <p className="text-center  max-sm:text-xs">{icon[1]}</p>
             </>
         );
