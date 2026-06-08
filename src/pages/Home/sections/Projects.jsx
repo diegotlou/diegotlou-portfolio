@@ -6,24 +6,9 @@ import {
     Modal,
     Project,
 } from "../../../components";
-import {
-    imagenTableroUno,
-    imagenTableroDos,
-    imagenTableroTres,
-    imagenTableroCuatro,
-    imagenScrollerUno,
-    imagenScrollerDos,
-    imagenScrollerTres,
-    imagenScrollerCuatro,
-    imagenPaisesUno,
-    imagenPaisesDos,
-    imagenPaisesTres,
-    imagenPaisesCuatro,
-    imagenPaisesCinco,
-    imagenRecomendacionUno,
-    imagenRecomendacionDos,
-} from "../../../assets";
+import * as MyImage from "../../../assets/images";
 import { ModalImageContext } from "../../../contexts/ModalImageContext";
+import { motion } from "motion/react";
 
 export default function Projects() {
     const [isOpen, setIsOpen] = useState(false);
@@ -34,6 +19,8 @@ export default function Projects() {
     const gitRecomendacion =
         "https://github.com/diegotlou/recomendacion-peliculas";
     const gitScroller = "https://github.com/diegotlou/react-infinite-scroller";
+    const gitRagSystem = "https://github.com/diegotlou/aws-rag-system"
+    const linkRagSystem = "https://diegotlou-tech-rag-system.streamlit.app/"
     const pigeon = "https://pigeon-maps.js.org/";
     const restcountries = "https://restcountries.com/";
     const pexels = "https://www.pexels.com/api/";
@@ -64,6 +51,14 @@ export default function Projects() {
         return <Git href={gitScroller} />;
     };
 
+    const renderGitRagSystem = () => {
+        return <Git href={gitRagSystem}/> 
+    }
+
+    const renderLinkRagSystem = () => {
+        return <Link href={linkRagSystem}/>
+    }
+
     const renderWebPigeon = () => {
         return <Link href={pigeon} />;
     };
@@ -86,14 +81,26 @@ export default function Projects() {
 
     const projects = [
         {
+            title: "Asistente técnico de AWS EC2",
+            technologies: ["Python", "LlamaIndex", "Gemini Flash Lite", "HuggingFace", "Pinecone", "MongoDB"],
+            links: [renderGitRagSystem, renderLinkRagSystem],
+            images: [
+                MyImage.imagenRagUno,
+                MyImage.imagenRagDos,
+                MyImage.imagenRagTres,
+            ],
+            content:
+                "Resuelve cualquier duda sobre AWS EC2. Esta implementación usa Hierarchicial RAG y HyDE (Hypothetical Document Embeddings) para generar mejores respuestas."
+        },
+        {
             title: "Tablero de tareas",
             technologies: ["React", "Bootstrap", "CSS", "Django", "MySQL"],
             links: [renderGitTablero, renderLinkTablero],
             images: [
-                imagenTableroUno,
-                imagenTableroDos,
-                imagenTableroTres,
-                imagenTableroCuatro,
+                MyImage.imagenTableroUno,
+                MyImage.imagenTableroDos,
+                MyImage.imagenTableroTres,
+                MyImage.imagenTableroCuatro,
             ],
             content:
                 "Administra tus tareas, crea, elimina, revisa y edita tu tarea, crea una cuenta, ingresa y cierra sesión. Versión prueba disponible.",
@@ -103,11 +110,11 @@ export default function Projects() {
             links: [renderGitPaises, renderWebPigeon, renderWebPexels],
             technologies: ["React", "CSS"],
             images: [
-                imagenPaisesUno,
-                imagenPaisesDos,
-                imagenPaisesTres,
-                imagenPaisesCuatro,
-                imagenPaisesCinco,
+                MyImage.imagenPaisesUno,
+                MyImage.imagenPaisesDos,
+                MyImage.imagenPaisesTres,
+                MyImage.imagenPaisesCuatro,
+                MyImage.imagenPaisesCinco,
             ],
             content:
                 "Busca algún país y obten información relevante, continente, gentilicio, ubicación (con pigeon-maps), etc. Usando la API de Restcountries para la información de los países y la API de Pexels para las imagenes. ",
@@ -117,10 +124,10 @@ export default function Projects() {
             links: [renderGitScroller, renderWebGiphy],
             technologies: ["React", "CSS"],
             images: [
-                imagenScrollerUno,
-                imagenScrollerDos,
-                imagenScrollerTres,
-                imagenScrollerCuatro,
+                MyImage.imagenScrollerUno,
+                MyImage.imagenScrollerDos,
+                MyImage.imagenScrollerTres,
+                MyImage.imagenScrollerCuatro,
             ],
             content:
                 "Implementación de infinite scroller usando Intersection Observer y useRef, obteniendo gifs de la api de Giphy. Implementación de una barra de navegación y un dark mode con useContext y variables css.",
@@ -129,7 +136,10 @@ export default function Projects() {
             title: "Recomendación de series y películas",
             links: [renderGitRecomendacion, renderWebKaggle],
             technologies: ["Python"],
-            images: [imagenRecomendacionUno, imagenRecomendacionDos],
+            images: [
+                MyImage.imagenRecomendacionUno,
+                MyImage.imagenRecomendacionDos
+            ],
             content:
                 "Implementacion de un modelo para la recomendación de series y películas usando Python y varias bibliotecas entre ellas pandas y sklearn. Se usó un vectorizador Tf-idf y similitud de coseno para medir la similitud entre los vectores. Data set tomado de kaggle.",
         },
