@@ -14,7 +14,7 @@ import { motion } from "motion/react";
 export default function Profile() {
     const email = "diego13579dmc@gmail.com";
     const git = "https://github.com/diegotlou";
-    const linkedin = "https://www.linkedin.com/in/diego-martinez-154244339";
+    const linkedin = "https://www.linkedin.com/in/diego-martinez-calzada/";
 
     const renderGit = () => {
         return <Git href={git} />;
@@ -55,7 +55,7 @@ export default function Profile() {
                     Facultad de Ciencias, UNAM. Apacionado por el diseño y
                     desarrollo web, e inteligencia artificial. Disponible para
                     trabajar, actualmente aprendiendo sobre el diseño
-                    responsive.
+                    responsive, y el uso de agentes.
                 </p>
                 <motion.div
                     initial="hidden"
