@@ -1,28 +1,18 @@
 import { motion } from "motion/react";
 import { AnimatedList } from "../../../components";
-import {
-    Css,
-    Django,
-    Html,
-    Javascript,
-    Mysql,
-    Python,
-    React,
-    Tailwind,
-    Vscode,
-} from "../../../components/Icons";
+import * as MyIcons from "../../../components/Icons";
 
 export default function Skills({}) {
     const iconosSkills = [
-        [<Css />, "CSS"],
-        [<Django />, "Django"],
-        [<Html />, "HTML5"],
-        [<Javascript />, "Javascript"],
-        [<Mysql />, "MySQL"],
-        [<Python />, "Python"],
-        [<React />, "React"],
-        [<Tailwind />, "Tailwindcss"],
-        [<Vscode />, "VSCode"],
+        [<MyIcons.Css />, "CSS"],
+        [<MyIcons.Django />, "Django"],
+        [<MyIcons.Html />, "HTML5"],
+        [<MyIcons.Javascript />, "Javascript"],
+        [<MyIcons.Mysql />, "MySQL"],
+        [<MyIcons.Python />, "Python"],
+        [<MyIcons.React />, "React"],
+        [<MyIcons.Tailwind />, "Tailwindcss"],
+        [<MyIcons.Vscode />, "VSCode"],
     ];
 
     const renderIconSkills = (icon) => {
